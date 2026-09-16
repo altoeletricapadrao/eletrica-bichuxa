@@ -3,54 +3,779 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Elétrica Bichuxa | Materiais Elétricos</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f6f8;color:#17202a}
-header{background:#111827;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:25px;font-weight:800}.logo span{color:#facc15}
-header a{color:white;text-decoration:none;background:#25d366;padding:11px 17px;border-radius:9px;font-weight:700}
-.hero{padding:70px 7%;background:linear-gradient(135deg,#1f2937,#374151);color:white}
-.hero h1{font-size:44px;max-width:700px;margin:0 0 15px}.hero p{font-size:19px;max-width:650px;color:#e5e7eb}
-.btn{display:inline-block;margin-top:18px;background:#facc15;color:#111827;padding:15px 22px;border-radius:10px;text-decoration:none;font-weight:800}
-section{padding:45px 7%}h2{text-align:center;font-size:30px;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.card{background:white;border-radius:14px;padding:24px;box-shadow:0 4px 16px #00000012;border:1px solid #e5e7eb}
-.card .icon{font-size:36px}.card h3{margin:12px 0 7px}.card p{color:#667085}
-.contact{background:#111827;color:white;text-align:center}.contact p{color:#d1d5db}.whats{background:#25d366;color:white}
-footer{padding:20px;text-align:center;background:#0b1120;color:#9ca3af;font-size:14px}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f5f7;
+  color:#172033;
+}
+
+header{
+  background:#111827;
+  color:white;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#25d366;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.whatsapp-top{
+  background:#25d366;
+  padding:11px 17px;
+  border-radius:9px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero{
+  padding:75px 6%;
+  background:linear-gradient(135deg,#172554,#111827);
+  color:white;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero h1{
+  font-size:46px;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#25d366;
+}
+
+.hero p{
+  font-size:19px;
+  line-height:1.6;
+  color:#dbe4f0;
+  margin-bottom:28px;
+}
+
+.btn{
+  display:inline-block;
+  background:#25d366;
+  color:white;
+  padding:15px 24px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-right:10px;
+}
+
+.btn.secondary{
+  background:white;
+  color:#111827;
+}
+
+.search-area{
+  padding:30px 6% 10px;
+}
+
+.search{
+  width:100%;
+  max-width:700px;
+  padding:17px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:16px;
+}
+
+.categories{
+  padding:20px 6%;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.category{
+  border:0;
+  padding:11px 18px;
+  border-radius:25px;
+  background:white;
+  cursor:pointer;
+  font-weight:bold;
+  box-shadow:0 2px 8px #00000012;
+}
+
+.category:hover{
+  background:#25d366;
+  color:white;
+}
+
+section{
+  padding:35px 6%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 5px 20px #00000012;
+  border:1px solid #e5e7eb;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  background:#eee;
+}
+
+.card-content{
+  padding:18px;
+}
+
+.tag{
+  color:#16a34a;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.card h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#6b7280;
+  line-height:1.5;
+  font-size:14px;
+  min-height:43px;
+}
+
+.price{
+  font-size:20px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.quote{
+  display:block;
+  text-align:center;
+  background:#25d366;
+  color:white;
+  text-decoration:none;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.info{
+  background:white;
+  border-radius:15px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 4px 18px #00000010;
+}
+
+.info h2{
+  margin-bottom:15px;
+}
+
+.info p{
+  color:#5b6472;
+  line-height:1.7;
+}
+
+footer{
+  margin-top:30px;
+  padding:35px 6%;
+  background:#111827;
+  color:white;
+  text-align:center;
+}
+
+footer strong{
+  color:#25d366;
+}
+
+.footer-buttons{
+  margin-top:20px;
+}
+
+.footer-buttons a{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  margin:5px;
+  font-weight:bold;
+}
+
+.whatsapp{
+  background:#25d366;
+  color:white;
+}
+
+.call{
+  background:white;
+  color:#111827;
+}
+
+.floating{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25d366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  text-decoration:none;
+  box-shadow:0 5px 20px #0005;
+  z-index:2000;
+}
+
+@media(max-width:700px){
+  header{
+    flex-direction:column;
+  }
+
+  nav{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero{
+    padding:55px 6%;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo">Elétrica <span>Bichuxa</span></div>
-  <a href="https://wa.me/5599985194488?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20de%20materiais%20el%C3%A9tricos." target="_blank">WhatsApp</a>
+
+<div class="logo">
+⚡ Elétrica <span>Bichuxa</span>
+</div>
+
+<nav>
+<a href="#produtos">Produtos</a>
+<a href="#sobre">Sobre</a>
+
+<a class="whatsapp-top"
+href="https://wa.me/5582987201256?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento."
+target="_blank">
+WhatsApp
+</a>
+</nav>
+
 </header>
 
-<div class="hero">
-  <h1>Materiais elétricos para sua obra</h1>
-  <p>Fios, cabos e materiais elétricos para instalações residenciais, comerciais e industriais.</p>
-  <a class="btn" href="https://wa.me/5599985194488?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20or%C3%A7amento%20na%20El%C3%A9trica%20Bichuxa." target="_blank">📲 FAÇA SEU ORÇAMENTO PELO WHATSAPP</a>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Materiais elétricos para sua <span>obra</span>
+</h1>
+
+<p>
+Fios, cabos, tomadas, interruptores, iluminação,
+disjuntores e diversos materiais elétricos para
+instalações residenciais, comerciais e industriais.
+</p>
+
+<a class="btn"
+href="https://wa.me/5582987201256?text=Olá!%20Quero%20fazer%20um%20orçamento."
+target="_blank">
+📱 Fazer orçamento
+</a>
+
+<a class="btn secondary" href="tel:+5582987201256">
+📞 Ligar agora
+</a>
+
 </div>
 
-<section>
-<h2>Nossos produtos</h2>
-<div class="grid">
-  <div class="card"><div class="icon">🔌</div><h3>Fios e Cabos</h3><p>Fios e cabos para diversos tipos de instalações elétricas.</p></div>
-  <div class="card"><div class="icon">💡</div><h3>Cabos LED</h3><p>Soluções para iluminação e instalações com LED.</p></div>
-  <div class="card"><div class="icon">⚡</div><h3>Cabos PP</h3><p>Cabos PP para equipamentos e diferentes aplicações.</p></div>
-  <div class="card"><div class="icon">🏗️</div><h3>Cabo de Alumínio</h3><p>Cabos de alumínio para aplicações elétricas.</p></div>
-  <div class="card"><div class="icon">🧰</div><h3>Cabo Flexível</h3><p>Cabos flexíveis para instalações elétricas em geral.</p></div>
-  <div class="card"><div class="icon">🛠️</div><h3>Materiais Elétricos</h3><p>Grande variedade de materiais e acessórios elétricos.</p></div>
+</section>
+
+
+<div class="search-area">
+
+<input
+id="search"
+class="search"
+type="text"
+placeholder="🔎 Pesquise por produto, fio, tomada, disjuntor..."
+onkeyup="searchProducts()">
+
 </div>
+
+
+<div class="categories">
+
+<button class="category" onclick="filterProducts('todos')">Todos</button>
+<button class="category" onclick="filterProducts('cabos')">Fios e Cabos</button>
+<button class="category" onclick="filterProducts('tomadas')">Tomadas</button>
+<button class="category" onclick="filterProducts('disjuntores')">Disjuntores</button>
+<button class="category" onclick="filterProducts('iluminacao')">Iluminação</button>
+<button class="category" onclick="filterProducts('ferramentas')">Ferramentas</button>
+<button class="category" onclick="filterProducts('eletrica')">Materiais Elétricos</button>
+
+</div>
+
+
+<section id="produtos">
+
+<h2 class="section-title">Produtos em destaque</h2>
+
+<div class="products" id="productList">
+
+
+<div class="card" data-category="cabos" data-name="cabo flexível">
+
+<img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">FIOS E CABOS</div>
+
+<h3>Cabo Flexível</h3>
+
+<p>Cabo elétrico para instalações residenciais e comerciais.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote"
+href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Cabo%20Flexível."
+target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="cabos" data-name="fio elétrico">
+
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">FIOS E CABOS</div>
+
+<h3>Fio Elétrico</h3>
+
+<p>Fios para instalações elétricas de diversos ambientes.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Fio%20Elétrico." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="tomadas" data-name="tomada elétrica">
+
+<img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">TOMADAS</div>
+
+<h3>Tomada Elétrica</h3>
+
+<p>Tomadas para instalações residenciais e comerciais.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Tomada%20Elétrica." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="tomadas" data-name="interruptor">
+
+<img src="https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">TOMADAS E INTERRUPTORES</div>
+
+<h3>Interruptor</h3>
+
+<p>Modelos para diferentes tipos de instalações.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Interruptor." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="disjuntores" data-name="disjuntor">
+
+<img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">PROTEÇÃO</div>
+
+<h3>Disjuntor</h3>
+
+<p>Disjuntores para proteção das instalações elétricas.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Disjuntor." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="iluminacao" data-name="lampada led">
+
+<img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">ILUMINAÇÃO</div>
+
+<h3>Lâmpada LED</h3>
+
+<p>Iluminação LED econômica para sua residência ou empresa.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Lâmpada%20LED." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="iluminacao" data-name="luminaria">
+
+<img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">ILUMINAÇÃO</div>
+
+<h3>Luminária</h3>
+
+<p>Soluções de iluminação para ambientes residenciais e comerciais.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Luminária." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="ferramentas" data-name="alicate">
+
+<img src="https://images.unsplash.com/photo-1581147036324-c1c96b6e5f8c?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">FERRAMENTAS</div>
+
+<h3>Alicate</h3>
+
+<p>Ferramentas para serviços elétricos e instalações.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Alicate." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="eletrica" data-name="caixa de distribuição">
+
+<img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">MATERIAIS ELÉTRICOS</div>
+
+<h3>Caixa de Distribuição</h3>
+
+<p>Caixas para organização e proteção da instalação elétrica.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Caixa%20de%20Distribuição." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="eletrica" data-name="eletroduto">
+
+<img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">MATERIAIS ELÉTRICOS</div>
+
+<h3>Eletroduto</h3>
+
+<p>Materiais para condução e proteção dos cabos elétricos.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Eletroduto." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="eletrica" data-name="conector elétrico">
+
+<img src="https://images.unsplash.com/photo-1597423244030-3f2a7e6f2a2e?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">CONEXÕES</div>
+
+<h3>Conector Elétrico</h3>
+
+<p>Conectores para instalações e serviços elétricos.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Conector%20Elétrico." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+<div class="card" data-category="iluminacao" data-name="refletor led">
+
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80">
+
+<div class="card-content">
+
+<div class="tag">ILUMINAÇÃO</div>
+
+<h3>Refletor LED</h3>
+
+<p>Refletores para áreas externas, comerciais e industriais.</p>
+
+<div class="price">Consulte o preço</div>
+
+<a class="quote" href="https://wa.me/5582987201256?text=Olá!%20Tenho%20interesse%20em%20Refletor%20LED." target="_blank">
+Solicitar orçamento
+</a>
+
+</div>
+</div>
+
+
+</div>
+
 </section>
 
-<section class="contact">
-<h2>Precisa de um orçamento?</h2>
-<p>Fale diretamente com a Elétrica Bichuxa pelo WhatsApp.</p>
-<a class="btn whats" href="https://wa.me/5599985194488?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20El%C3%A9trica%20Bichuxa%20e%20quero%20fazer%20um%20or%C3%A7amento." target="_blank">💬 Falar no WhatsApp</a>
-<p>WhatsApp: (99) 98519-4488</p>
+
+<section id="sobre">
+
+<div class="info">
+
+<h2>Elétrica Bichuxa</h2>
+
+<p>
+Materiais elétricos para obras, reformas, instalações
+residenciais, comerciais e industriais.
+<br>
+Entre em contato e solicite seu orçamento pelo WhatsApp.
+</p>
+
+<div class="footer-buttons">
+
+<a class="whatsapp"
+href="https://wa.me/5582987201256?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento."
+target="_blank">
+📱 WhatsApp
+</a>
+
+<a class="call" href="tel:+5582987201256">
+📞 (82) 98720-1256
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<footer>© 2026 Elétrica Bichuxa — Materiais Elétricos</footer>
+
+<footer>
+
+<p>
+© 2026 <strong>Elétrica Bichuxa</strong> — Materiais Elétricos
+</p>
+
+<p style="margin-top:10px;">
+Faça seu orçamento pelo WhatsApp
+</p>
+
+<div class="footer-buttons">
+
+<a class="whatsapp"
+href="https://wa.me/5582987201256?text=Olá!%20Vim%20pelo%20site%20da%20Elétrica%20Bichuxa%20e%20quero%20fazer%20um%20orçamento."
+target="_blank">
+WhatsApp
+</a>
+
+<a class="call" href="tel:+5582987201256">
+Ligar
+</a>
+
+</div>
+
+</footer>
+
+
+<a class="floating"
+href="https://wa.me/5582987201256?text=Olá!%20Vim%20pelo%20site%20e%20quero%20fazer%20um%20orçamento."
+target="_blank">
+💬
+</a>
+
+
+<script>
+
+function searchProducts(){
+
+  const search =
+  document.getElementById("search").value.toLowerCase();
+
+  const cards =
+  document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+
+    const name =
+    card.dataset.name.toLowerCase();
+
+    if(name.includes(search)){
+      card.style.display="";
+    }else{
+      card.style.display="none";
+    }
+
+  });
+
+}
+
+
+function filterProducts(category){
+
+  const cards =
+  document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+
+    if(category === "todos" ||
+       card.dataset.category === category){
+
+      card.style.display="";
+
+    }else{
+
+      card.style.display="none";
+
+    }
+
+  });
+
+}
+
+</script>
+
 </body>
 </html>
